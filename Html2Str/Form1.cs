@@ -16,5 +16,14 @@ namespace Html2Str
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            InputFileEncodingComboBox.SelectedIndex = 0;
+            foreach(var item in OutputFileEncodingComboBox.Items)
+            {
+                item
+            }
+        }
     }
 }
