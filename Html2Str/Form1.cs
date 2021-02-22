@@ -28,6 +28,10 @@ namespace Html2Str
             InputFileEncodingComboBox.SelectedIndex = 1;
             OutputFileEncodingComboBox.Items.AddRange(data.Keys.ToArray());
             OutputFileEncodingComboBox.SelectedIndex = 1;
+
+
+            LineEndComboBox.Items.AddRange(new string[]{ "\\r\\n", "\\n"});
+            LineEndComboBox.SelectedIndex = 0;
         }
 
         private void InputFileButton_Click(object sender, EventArgs e)
@@ -51,7 +55,6 @@ namespace Html2Str
             if (System.IO.File.Exists(InputFileTextBox.Text))
             {
                 string save = "";
-                MessageBox.Show(InputFileEncodingComboBox.SelectedItem.ToString());
                 String[] a = System.IO.File.ReadAllLines(InputFileTextBox.Text, data[InputFileEncodingComboBox.SelectedItem.ToString()]);
                 for (var i = 0; i < a.Length; i++)
                 {
@@ -87,6 +90,19 @@ namespace Html2Str
             {
                 MessageBox.Show("지정된 경로에 파일이나 폴더가 존재하지 않습니다.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var lineend = LineEndComboBox.SelectedIndex == 0 ? "\r\n" : "\n";
+            String[] a = Clipboard.GetText().Split(lineend.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            for (var i = 0; i < a.Length; i++)
+            {
+                a[i] = a[i].Replace("\"", "\\\"");
+                a[i] = a[i].Replace("\\t", "\\\\t");
+                a[i] = "\"" + a[i] + "\"" + (i + 1 == a.Length ? ";" : "+" + lineend);
+            }
+            Clipboard.SetText(string.Join("", a));
         }
     }
 }

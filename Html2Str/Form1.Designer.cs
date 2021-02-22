@@ -41,6 +41,9 @@
             this.InputFileButton = new System.Windows.Forms.Button();
             this.OutputFileButton = new System.Windows.Forms.Button();
             this.ClipBoardCopy = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.LineEndComboBox = new System.Windows.Forms.ComboBox();
+            this.LineEnd = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // InputFileLabel
@@ -56,7 +59,7 @@
             // 
             this.InputFileTextBox.Location = new System.Drawing.Point(75, 14);
             this.InputFileTextBox.Name = "InputFileTextBox";
-            this.InputFileTextBox.Size = new System.Drawing.Size(211, 21);
+            this.InputFileTextBox.Size = new System.Drawing.Size(224, 21);
             this.InputFileTextBox.TabIndex = 1;
             // 
             // InputFileEncodingLabel
@@ -99,7 +102,7 @@
             // 
             this.OutputFileTextBox.Location = new System.Drawing.Point(75, 45);
             this.OutputFileTextBox.Name = "OutputFileTextBox";
-            this.OutputFileTextBox.Size = new System.Drawing.Size(211, 21);
+            this.OutputFileTextBox.Size = new System.Drawing.Size(224, 21);
             this.OutputFileTextBox.TabIndex = 5;
             // 
             // OutputFileLabel
@@ -113,7 +116,7 @@
             // 
             // ConvertButton
             // 
-            this.ConvertButton.Location = new System.Drawing.Point(185, 145);
+            this.ConvertButton.Location = new System.Drawing.Point(273, 145);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.Size = new System.Drawing.Size(83, 23);
             this.ConvertButton.TabIndex = 8;
@@ -123,7 +126,7 @@
             // 
             // InputFileButton
             // 
-            this.InputFileButton.Location = new System.Drawing.Point(292, 14);
+            this.InputFileButton.Location = new System.Drawing.Point(309, 14);
             this.InputFileButton.Name = "InputFileButton";
             this.InputFileButton.Size = new System.Drawing.Size(47, 23);
             this.InputFileButton.TabIndex = 9;
@@ -133,7 +136,7 @@
             // 
             // OutputFileButton
             // 
-            this.OutputFileButton.Location = new System.Drawing.Point(292, 43);
+            this.OutputFileButton.Location = new System.Drawing.Point(309, 43);
             this.OutputFileButton.Name = "OutputFileButton";
             this.OutputFileButton.Size = new System.Drawing.Size(47, 23);
             this.OutputFileButton.TabIndex = 10;
@@ -143,19 +146,50 @@
             // 
             // ClipBoardCopy
             // 
-            this.ClipBoardCopy.Location = new System.Drawing.Point(86, 145);
+            this.ClipBoardCopy.Location = new System.Drawing.Point(14, 145);
             this.ClipBoardCopy.Name = "ClipBoardCopy";
-            this.ClipBoardCopy.Size = new System.Drawing.Size(93, 23);
+            this.ClipBoardCopy.Size = new System.Drawing.Size(110, 23);
             this.ClipBoardCopy.TabIndex = 11;
-            this.ClipBoardCopy.Text = "클립보드 복사";
+            this.ClipBoardCopy.Text = "파일⇒클립보드";
             this.ClipBoardCopy.UseVisualStyleBackColor = true;
             this.ClipBoardCopy.Click += new System.EventHandler(this.ClipBoardCopy_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(130, 145);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "클립보드⇒클립보드";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // LineEndComboBox
+            // 
+            this.LineEndComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LineEndComboBox.FormattingEnabled = true;
+            this.LineEndComboBox.Location = new System.Drawing.Point(301, 77);
+            this.LineEndComboBox.Name = "LineEndComboBox";
+            this.LineEndComboBox.Size = new System.Drawing.Size(55, 20);
+            this.LineEndComboBox.TabIndex = 13;
+            // 
+            // LineEnd
+            // 
+            this.LineEnd.AutoSize = true;
+            this.LineEnd.Location = new System.Drawing.Point(246, 81);
+            this.LineEnd.Name = "LineEnd";
+            this.LineEnd.Size = new System.Drawing.Size(53, 12);
+            this.LineEnd.TabIndex = 14;
+            this.LineEnd.Text = "개행종류";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 176);
+            this.ClientSize = new System.Drawing.Size(362, 176);
+            this.Controls.Add(this.LineEnd);
+            this.Controls.Add(this.LineEndComboBox);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ClipBoardCopy);
             this.Controls.Add(this.OutputFileButton);
             this.Controls.Add(this.InputFileButton);
@@ -191,6 +225,9 @@
         private System.Windows.Forms.Button InputFileButton;
         private System.Windows.Forms.Button OutputFileButton;
         private System.Windows.Forms.Button ClipBoardCopy;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox LineEndComboBox;
+        private System.Windows.Forms.Label LineEnd;
     }
 }
 
